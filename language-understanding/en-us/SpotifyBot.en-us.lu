@@ -1,0 +1,21 @@
+
+# GetCurrentTrack
+- show my current track
+- what is my current track
+- let me know about my current track
+- current song
+- what is playing
+
+# PlayArtistRandom
+- play a song by {artist=Arctic Monkeys}
+- play {artist=Madonna} song
+- run a song by {artist=Mettalica}
+- start random of {artist=David Bowie}
+
+> entity definitions:
+@ ml artist
+
+@ phraseList playSong(interchangeable) = 
+	- play
+	- run
+	- start

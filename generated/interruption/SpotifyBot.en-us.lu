@@ -1,0 +1,40 @@
+
+> LUIS application information
+> !# @app.versionId = 0.1
+> !# @app.culture = en-us
+> !# @app.luis_schema_version = 3.2.0
+
+
+> # Intent definitions
+
+# GetCurrentTrack
+- show my current track
+- what is my current track
+- let me know about my current track
+- current song
+- what is playing
+
+
+# PlayArtistRandom
+- play a song by {@artist=Arctic Monkeys}
+- play {@artist=Madonna} song
+- run a song by {@artist=Mettalica}
+- start random of {@artist=David Bowie}
+
+
+> # Entity definitions
+
+@ ml artist
+
+
+> # PREBUILT Entity definitions
+
+
+> # Phrase list definitions
+
+
+> # List entities
+
+> # RegEx entities
+
+

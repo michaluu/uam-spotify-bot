@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_lF5UTj()
+- Something went wrong :(
+# SendActivity_lqlE2f()
+- Nothing is playing right now. Ask me to play your favorite artist!
+# SendActivity_RnzTpU()
+- Currently playing: ${conversation.current.song} by ${conversation.current.artist}.

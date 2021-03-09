@@ -1,0 +1,95 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "jsfyQO",
+    "name": "GetCurrentTrack",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "EGCwMG"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "hU04dA"
+          },
+          "method": "GET",
+          "url": "https://api.spotify.com/v1/me/player",
+          "resultProperty": "dialog.response",
+          "headers": {
+            "Authorization": "= concat('Bearer ', user.token)"
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "TlXIGD"
+          },
+          "cases": [
+            {
+              "value": "200",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "sjMKYK"
+                  },
+                  "assignments": [
+                    {
+                      "property": "conversation.current.artist",
+                      "value": "${dialog.response.content.item.artists[0].name}"
+                    },
+                    {
+                      "property": "conversation.current.song",
+                      "value": "${dialog.response.content.item.name}"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "RnzTpU"
+                  },
+                  "activity": "${SendActivity_RnzTpU()}"
+                }
+              ]
+            },
+            {
+              "value": "204",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "lqlE2f"
+                  },
+                  "activity": "${SendActivity_lqlE2f()}"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "lF5UTj"
+              },
+              "activity": "${SendActivity_lF5UTj()}"
+            }
+          ],
+          "condition": "dialog.response.statusCode"
+        }
+      ]
+    }
+  ],
+  "generator": "GetCurrentTrack.lg",
+  "recognizer": "GetCurrentTrack.lu.qna",
+  "id": "GetCurrentTrack"
+}

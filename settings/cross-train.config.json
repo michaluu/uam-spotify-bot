@@ -1,0 +1,16 @@
+{
+  "SpotifyBot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "": [
+        "OAuth.en-us"
+      ],
+      "GetCurrentTrack": [
+        "GetCurrentTrack.en-us"
+      ],
+      "PlayArtistRandom": [
+        "PlayArtistRandom.en-us"
+      ]
+    }
+  }
+}

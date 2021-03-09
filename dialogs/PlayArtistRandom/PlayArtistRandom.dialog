@@ -1,0 +1,48 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ft0lQ2",
+    "name": "PlayArtistRandom",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "MOg6CU"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "phVPOO"
+          },
+          "activity": "${SendActivity_phVPOO()}"
+        },
+        {
+          "$kind": "SpotifyPlayArtistRandomDialog",
+          "$designer": {
+            "id": "yQeRB4"
+          },
+          "spotifyToken": "${user.token}",
+          "artist": "${@artist}",
+          "resultProperty": "dialog.startedTrack"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "3sPU5d"
+          },
+          "activity": "${SendActivity_3sPU5d()}"
+        }
+      ]
+    }
+  ],
+  "generator": "PlayArtistRandom.lg",
+  "recognizer": "PlayArtistRandom.lu.qna",
+  "id": "PlayArtistRandom"
+}

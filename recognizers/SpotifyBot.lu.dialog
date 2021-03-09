@@ -1,5 +1,8 @@
 {
   "$kind": "Microsoft.MultiLanguageRecognizer",
   "id": "LUIS_SpotifyBot",
-  "recognizers": {}
+  "recognizers": {
+    "en-us": "SpotifyBot.en-us.lu",
+    "": "SpotifyBot.en-us.lu"
+  }
 }

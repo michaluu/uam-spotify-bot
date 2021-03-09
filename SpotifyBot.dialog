@@ -17,11 +17,82 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "2fGwjf"
+          },
+          "activityProcessed": true,
+          "dialog": "OAuth"
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "AcrweB"
           },
           "activity": "${SendActivity_AcrweB()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "6YTFz0",
+        "name": "GetCurrentTrack"
+      },
+      "intent": "GetCurrentTrack",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "vMEfud"
+          },
+          "activityProcessed": true,
+          "dialog": "GetCurrentTrack"
+        }
+      ],
+      "condition": "=#GetCurrentTrack.Score > 0.6"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "MFCTm5",
+        "name": "PlayArtistRandom"
+      },
+      "intent": "PlayArtistRandom",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "uT2dZL"
+          },
+          "activityProcessed": true,
+          "dialog": "PlayArtistRandom"
+        }
+      ],
+      "entities": [
+        "artist"
+      ],
+      "condition": "=#PlayArtistRandom.Score > 0.6"
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "xdBHTH"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "QfMzcH"
+          },
+          "activity": "${SendActivity_QfMzcH()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "7EHBnu"
+          },
+          "activity": "${SendActivity_7EHBnu()}"
         }
       ]
     }

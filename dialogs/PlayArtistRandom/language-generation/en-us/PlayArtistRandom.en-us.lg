@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# SendActivity_phVPOO()
+- Let me search for '${@artist}' and play a random song for you.
+# SendActivity_3sPU5d()
+- Just started: ${dialog.startedTrack.track} by ${dialog.startedTrack.artist}.
