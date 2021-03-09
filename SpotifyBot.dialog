@@ -1,0 +1,33 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "SpotifyBot",
+      "description": "",
+      "id": "pGp9O4"
+    }
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "AcrweB"
+          },
+          "activity": "${SendActivity_AcrweB()}"
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "SpotifyBot.lg",
+  "id": "SpotifyBot",
+  "recognizer": "SpotifyBot.lu.qna"
+}

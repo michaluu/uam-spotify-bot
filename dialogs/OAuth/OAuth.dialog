@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "A0Z5NV",
+    "name": "OAuth",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "CjK61z"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.OAuthInput",
+          "$designer": {
+            "id": "IAzSx7"
+          },
+          "timeout": 900000,
+          "maxTurnCount": 3,
+          "allowInterruptions": true,
+          "connectionName": "Spotify",
+          "text": "Hi! I'm a Spoty. You need to log in order to continue!",
+          "title": "Login",
+          "property": "dialog.authResult"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "tn6iO3"
+          },
+          "property": "user.token",
+          "value": "${dialog.authResult.token}"
+        }
+      ]
+    }
+  ],
+  "generator": "OAuth.lg",
+  "recognizer": "OAuth.lu.qna",
+  "id": "OAuth"
+}
